@@ -9,7 +9,9 @@
 
 	require_once('assets\twilio-twilio-php-4562ea1\Services\Twilio.php');
 	
-	$number = $_POST["number"];
+	$number1 = $_POST["number1"];
+	$number2 = $_POST["number2"];
+	$number3 = $_POST["number3"];
 	
 
 	$account_sid = 'AC0f438281d8e09a3960e4a73629c4f16e'; 
@@ -17,7 +19,7 @@
 	$client = new Services_Twilio($account_sid, $auth_token); 
  
 	$client->account->messages->create(array( 
-		'To' => "+1" . $number, 
+		'To' => "+1" . $number1 . $number2 . $number3, 
 		'From' => "+19788194734", 
 		'Body' => "Hi, I'm Tylor!",  
 		));
